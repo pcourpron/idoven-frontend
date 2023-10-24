@@ -1,6 +1,6 @@
 # Idoven frontend
 
-To install use: `npm i --legacy-peer-deps`. The legacy dependencies are for testing react hooks nad it should be updated in the near future and causes no issues for the time being.
+To install use: `npm i --legacy-peer-deps`. The legacy dependencies are for testing react hooks and it should be updated in the near future and causes no issues for the time being.
 
 to run locally: `npm run dev`
 
