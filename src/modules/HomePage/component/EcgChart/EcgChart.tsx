@@ -1,6 +1,7 @@
-import { EcgData } from "../../../../types/EcgData.types";
-import { Box, Slider } from "@mui/material";
 import { RefObject, useEffect, useMemo, useRef, useState } from "react";
+
+import { EcgData } from "../../../../types/EcgData.types";
+import { Box, Slider } from "../../../../components";
 import { LineChart } from "../../../../components";
 import { secondsToHMS } from "../../../../utils";
 import { AddNoteModal } from "../AddNoteModal/AddNoteModal";

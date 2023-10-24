@@ -2,7 +2,7 @@ import { EcgChart } from "../../component/EcgChart/EcgChart";
 import { useNotesContext } from "../../../../context/hooks/useNotesContext";
 import { useEcgContext, useFileUploadsContext } from "../../../../context";
 import { useKeyOverride } from "../../../../hooks/useKeyOverride";
-import { Box, Typography, UploadFile } from "../../../../components";
+import { Box, Loader, Typography, UploadFile } from "../../../../components";
 
 export const EcgSection = () => {
   const { data, totalSplit, setPage, page, nextPage, previousPage } =
@@ -13,9 +13,19 @@ export const EcgSection = () => {
   useKeyOverride("ArrowLeft", nextPage);
   useKeyOverride("ArrowRight", previousPage);
 
-  if (!data) {
-    return <div>Loading...</div>;
-  }
+  if (!data)
+    return (
+      <Box
+        sx={{
+          height: "calc(100vh - 100px)",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Loader text="Data is loading..." />
+      </Box>
+    );
 
   return (
     <Box>
