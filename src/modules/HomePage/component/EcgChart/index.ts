@@ -1,0 +1,1 @@
+export { EcgChart } from "./EcgChart";
