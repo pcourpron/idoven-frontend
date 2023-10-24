@@ -1,6 +1,6 @@
 import { useFileUploadsContext } from "../../context/hooks/useFileUploadsContext";
 import { EcgSection } from "./container/EcgSection/EcgSection";
-import { Box, UploadFile } from "../../components";
+import { Box, Button, UploadFile } from "../../components";
 
 export const HomePage = () => {
   const { setCurrentFile, currentFile } = useFileUploadsContext();
@@ -21,6 +21,16 @@ export const HomePage = () => {
           setCurrentFile(acceptedFiles[0]);
         }}
       />
+      or
+      <Button
+        onClick={() =>
+          fetch("demo/data.txt")
+            .then(async (res) => res.blob())
+            .then((res) => setCurrentFile(new File([res], "demo.txt")))
+        }
+      >
+        Download the demo file
+      </Button>
     </Box>
   );
 };
