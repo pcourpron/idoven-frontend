@@ -47,14 +47,20 @@ export const EcgSection = () => {
           />
         </Box>
       </Box>
-      <EcgChart
-        split={page}
-        totalSplit={totalSplit}
-        data={data}
-        onSplitChange={setPage}
-        notes={notes}
-        addNote={addNote}
-      />
+      {data.length === 0 ? (
+        <Typography variant="body1">
+          Looks like that file is invalid. Could you please upload another?
+        </Typography>
+      ) : (
+        <EcgChart
+          split={page}
+          totalSplit={totalSplit}
+          data={data}
+          onSplitChange={setPage}
+          notes={notes}
+          addNote={addNote}
+        />
+      )}
     </Box>
   );
 };

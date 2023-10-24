@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <EcgContextProvider>
           <NotesContextProvider>
             <Routes>
-              <Route index element={<HomePage />} />
+              <Route index path={navigation.home} element={<HomePage />} />
               <Route path={navigation.notes} element={<Notes />} />
               <Route path="*" element={<div>Looks like you're lost</div>} />
             </Routes>

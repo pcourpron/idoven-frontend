@@ -1,27 +1,16 @@
-# React + TypeScript + Vite
+# Idoven frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To install use: `npm i --legacy-peer-deps`. The legacy dependencies are for testing react hooks nad it should be updated in the near future and causes no issues for the time being.
 
-Currently, two official plugins are available:
+to run locally: `npm run dev`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I've used vite + vitest for the tests with react testing library. I've also used recharts for the chart to be able to customize it as needed.
 
-## Expanding the ESLint configuration
+I've also covered some of the important parts with tests although there are some missing and unfortunately I lost my git history due to a problem with git lfs. This is also the reason why I've chosen to use the file upload instead of reading directly from the repository as it could potentially cause problems.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+There are some improvements to be made in the codebase:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1.  Verify that the file is compatible and handle errors from that. Right now we just ask to upload a different file.
+2.  Handle missing/incorrect datapoints better
+3.  Handle dynamic timestamp sizes.
+4.  Handle different file types
